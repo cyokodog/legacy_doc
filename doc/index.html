@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' id='style-css'  href='style.css' type='text/css' media='all' />
+    <link href="bower_components/angular-loading-bar/build/loading-bar.css" rel="stylesheet">
+    <link href="lib/jquery.ex-code-prettify/jquery.ex-code-prettify.css" rel="stylesheet"/>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="lib/angular.toc/angular.toc.js"></script>
+    <script type="text/javascript" src="lib/angular.toc/toc.js"></script>
+    <script type="text/javascript" src="lib/angular.markdown/angular.markdown.js"></script>
+    <script type="text/javascript" src="lib/angular.markdown/marked.js"></script>
+    <script type="text/javascript" src="lib/jquery.ex-code-prettify/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="lib/jquery.ex-code-prettify/jquery.ex-code-prettify.js"></script>
+    <script type="text/javascript" src="lib/jquery.easy-code-prettify/jquery.easy-code-prettify.js"></script>
+    <script src="js/index.js"></script>
+
+<style>
+.animated.ng-enter {
+  transition: .5s linear all;
+  opacity: 0;
+}
+.animated.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.animated.ng-leave {
+  opacity: 0;
+}
+#loading-bar-spinner {
+  top:calc(50% - 25px);
+  left:calc(50% - 25px);
+}
+#loading-bar-spinner .spinner-icon {
+  width:50px;
+  height:50px;
+  border-radius: 80%;
+}
+html,
+body,
+.l-mainArea,
+.l-subArea,
+.l-extArea{
+  height: 100%;
+}
+.l-subArea,
+.l-extArea{
+  position: fixed;
+  top: 0;
+  padding:0 1%;
+  width:20%;
+  overflow-y: scroll;
+  background:#f8fcff;
+}
+.l-subArea{
+  left:0;
+}
+.l-extArea{
+  left:78%;
+}
+.l-mainArea{
+  margin-left:24%;
+  width:50%;
+  position: relative;
+}
+</style>
+
+
+  </head>
+  <body ng-controller="appController as vm">
+    <div class="l-subArea">
+  sub</div><!--
+    --><div class="l-mainArea"><div class="viewArticle" ui-view="viewArticle" class="animated"></div></div><!--
+    --><div class="l-extArea">
+        <div ui-view="viewArticleList"></div>
+          <md-loader url="{{vm.sitemapUrl}}"/>
+    </div>
+  </body>
+</html>
