@@ -13,8 +13,6 @@
         ret: '=',
         mdCallback: '&'
       },
-      replace: true,
-      template: '<div class="mdLoader"/>',
       link: function(scope, el, attr, vm){
         vm.init(scope, el, attr);
       },
@@ -44,7 +42,7 @@
     return {
       fetch: function(url){
         var d = $q.defer();
-        $http.get(url).
+        $http.get(url, {cache:false}).
         success(function(res){
           d.resolve(res);
         });
