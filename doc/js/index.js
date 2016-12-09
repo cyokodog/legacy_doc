@@ -42,7 +42,7 @@ angular.module('app').config(function($controllerProvider,$compileProvider){
 				url: '/{articleId:.+}.md',
 				views: {
 					'viewArticle': {
-						template: '<md-loader url="md/{{vm.articleId}}.md" md-callback="vm.callback(promise)"/>',
+						template: '<md-loader class="mdLoader" url="md/{{vm.articleId}}.md" md-callback="vm.callback(promise)"/>',
 						controllerAs: 'vm',
 						controller: controller
 					}
@@ -108,5 +108,3 @@ angular.module('app').directive('hoge', function(){
 		}
 	}
 })
-
-
